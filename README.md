@@ -31,9 +31,13 @@ Eclipse + VMware Workstation Pro
 6、`user` (数据库名)
 ## 效果演示
 
-登录界面![image](https://github.com/2842345067/Spring-Toob/blob/master/images/1.png)
+登录界面
 
-注册界面![image](https://github.com/2842345067/Spring-Toob/blob/master/images/2.png)
+![image](https://github.com/2842345067/Spring-Toob/blob/master/images/1.png)
+
+注册界面
+
+![image](https://github.com/2842345067/Spring-Toob/blob/master/images/2.png)
 
 ![image](https://github.com/2842345067/Spring-Toob/blob/master/images/3.png)
 
