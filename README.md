@@ -39,25 +39,47 @@ Eclipse + VMware Workstation Pro
 
 ![image](https://github.com/2842345067/Spring-Toob/blob/master/images/2.png)
 
+记账首页
+
 ![image](https://github.com/2842345067/Spring-Toob/blob/master/images/3.png)
+
+个人信息首页
 
 ![image](https://github.com/2842345067/Spring-Toob/blob/master/images/4.png)
 
+修改密码首页
+
 ![image](https://github.com/2842345067/Spring-Toob/blob/master/images/5.png)
+
+记录管理界面
 
 ![image](https://github.com/2842345067/Spring-Toob/blob/master/images/6.png)
 
+记录新建界面
+
 ![image](https://github.com/2842345067/Spring-Toob/blob/master/images/7.png)
+
+记录修改界面
 
 ![image](https://github.com/2842345067/Spring-Toob/blob/master/images/8.png)
 
+记录删除界面
+
 ![image](https://github.com/2842345067/Spring-Toob/blob/master/images/9.png)
+
+当前总金额界面
 
 ![image](https://github.com/2842345067/Spring-Toob/blob/master/images/10.png)
 
+支入金额界面
+
 ![image](https://github.com/2842345067/Spring-Toob/blob/master/images/11.png)
 
+支出金额界面
+
 ![image](https://github.com/2842345067/Spring-Toob/blob/master/images/12.png)
+
+404界面
 
 ![image](https://github.com/2842345067/Spring-Toob/blob/master/images/13.png)
 
