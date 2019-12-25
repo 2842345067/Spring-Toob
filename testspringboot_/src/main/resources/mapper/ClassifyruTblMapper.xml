@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.galaxy.springboot.mapper.ClassifyruTblMapper" >
+  <resultMap id="BaseResultMap" type="com.galaxy.springboot.entity.ClassifyruTbl" >
+    <id column="rid" property="rid" jdbcType="INTEGER" />
+    <result column="classifyru" property="classifyru" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    rid, classifyru
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.galaxy.springboot.entity.ClassifyruTblExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from classifyru_tbl
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from classifyru_tbl
+    where rid = #{rid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from classifyru_tbl
+    where rid = #{rid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.galaxy.springboot.entity.ClassifyruTblExample" >
+    delete from classifyru_tbl
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.galaxy.springboot.entity.ClassifyruTbl" >
+    insert into classifyru_tbl (rid, classifyru)
+    values (#{rid,jdbcType=INTEGER}, #{classifyru,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.galaxy.springboot.entity.ClassifyruTbl" >
+    insert into classifyru_tbl
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="rid != null" >
+        rid,
+      </if>
+      <if test="classifyru != null" >
+        classifyru,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="rid != null" >
+        #{rid,jdbcType=INTEGER},
+      </if>
+      <if test="classifyru != null" >
+        #{classifyru,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.galaxy.springboot.entity.ClassifyruTblExample" resultType="java.lang.Integer" >
+    select count(*) from classifyru_tbl
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update classifyru_tbl
+    <set >
+      <if test="record.rid != null" >
+        rid = #{record.rid,jdbcType=INTEGER},
+      </if>
+      <if test="record.classifyru != null" >
+        classifyru = #{record.classifyru,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update classifyru_tbl
+    set rid = #{record.rid,jdbcType=INTEGER},
+      classifyru = #{record.classifyru,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.galaxy.springboot.entity.ClassifyruTbl" >
+    update classifyru_tbl
+    <set >
+      <if test="classifyru != null" >
+        classifyru = #{classifyru,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where rid = #{rid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.galaxy.springboot.entity.ClassifyruTbl" >
+    update classifyru_tbl
+    set classifyru = #{classifyru,jdbcType=VARCHAR}
+    where rid = #{rid,jdbcType=INTEGER}
+  </update>
+  
+    <select id="selcttblru"  resultMap="ClassifyruMap">
+		SELECT * FROM `classifyru_tbl` cl  LEFT JOIN `classifyru_er_tbl` ce ON cl.`rid`=ce.`classifyru_id`;
+	</select>
+	
+	<select id="selcttblerru" parameterType="int" resultMap="ClassifyruMap">
+	SELECT * FROM `classifyru_tbl` cl  LEFT JOIN `classifyru_er_tbl` ce ON cl.`rid`=ce.`classifyru_id` WHERE cl.rid=#{cid};
+  </select>
+  
+  
+  	<resultMap id="ClassifyruMap"
+		type="com.galaxy.springboot.entity.ClassifyruTbl">
+		
+    <id column="rid" property="rid" jdbcType="INTEGER" />
+    <result column="classifyru" property="classifyru" jdbcType="VARCHAR" />
+		
+		<collection property="classifyruErTbl"
+			ofType="com.galaxy.springboot.entity.ClassifyruErTbl">
+			<id column="id" property="id" jdbcType="INTEGER" />
+    <result column="classifyru_er" property="classifyruEr" jdbcType="VARCHAR" />
+    <result column="classifyru_id" property="classifyruId" jdbcType="INTEGER" />
+		</collection>
+	</resultMap>
+</mapper>
